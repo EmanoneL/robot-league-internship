@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+</head>
+<body>
+{% if message %}
+    <p style="color: red;">{{ message }}</p>
+{% endif %}
+    <h1>Feedback Form</h1>
+    <form method="POST" action="/feedback">
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment"></textarea><br><br>
+
+        <label for="full_name">Full Name:</label><br>
+        <input type="text" id="full_name" name="full_name" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)"><br><br>
+
+        <label for="phone">Mobile Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required pattern="^((\+7|7|8)+([0-9]){10})$"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
